@@ -1,0 +1,13 @@
+asyncpg - асинхронный драйвер соединения фреймворка с базой данных
+alembic -
+sqlalchemy - ORM object relational mapping
+FastAPIuser - библиотека аунтификации и авторизации пользователя
+Pydintic -
+Redis - временная nosql база данных ключ-значение, использующаяся для аунтификации
+uvicorn -
+celery - создатель асинхронных фоновых ежежневных задач
+flower - веб-интерфейс для celery на 5555 порту
+pytest - тестирование sync + async
+uvicorn
+CORS
+https://tailwindui.com/ - шаблоны css и html
