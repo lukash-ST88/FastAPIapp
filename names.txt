@@ -10,4 +10,5 @@ flower - веб-интерфейс для celery на 5555 порту
 pytest - тестирование sync + async
 uvicorn
 CORS
-https://tailwindui.com/ - шаблоны css и html
+https://tailwindui.com/ - шаблоны css и htmlf
+WebSocket

@@ -14,7 +14,8 @@ engine = create_async_engine(DATABASE_URL)  # точка входа sqlalchemy �
 # временные сессии(соединения) с бд
 async_session_maker = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
-metadata = MetaData() # аккумулированная информация о созданных таблицах
+metadata = MetaData()  # аккумулированная информация о созданных таблицах императивным методом
+
 
 async def get_async_session() -> AsyncGenerator[AsyncSession, None]:
     async with async_session_maker() as session:

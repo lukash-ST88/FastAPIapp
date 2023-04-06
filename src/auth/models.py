@@ -5,7 +5,7 @@ from sqlalchemy import MetaData, Integer, String, TIMESTAMP, ForeignKey, Table, 
 
 from database import Base, metadata
 
-
+# императивный стиль моделей
 role = Table(
     'role',
     metadata,
@@ -14,21 +14,12 @@ role = Table(
     Column('permissions', JSON),
 )
 
-user = Table(
-    "user",
-    metadata,
-    Column('id', Integer, primary_key=True),
-    Column('email', String, nullable=False),
-    Column('username', String, nullable=False),
-    Column('hashed_password', String, nullable=False),
-    Column('registered_at', TIMESTAMP, default=datetime.datetime.utcnow()),  # время регистрации пользователя
-    Column('role_id', Integer, ForeignKey(role.c.id)), # c - это column
-    Column('is_active', Boolean, default=True, nullable=False),
-    Column('is_superuser', Boolean, default=False, nullable=False),
-    Column('is_verified', Boolean, default=False, nullable=False)
-)
+
+# декларативный стиль моделей
 
 class User(SQLAlchemyBaseUserTable[int], Base):
+    __tablename__ = 'user'
+
     id = Column(Integer, primary_key=True)
     email = Column(String, nullable=False)
     username = Column(String, nullable=False)
